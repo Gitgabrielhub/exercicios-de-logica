@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form action="" >
+        <div>
+            <label for="nome">nome:</label>
+            <input type="text" name="nome" id="name">
+        </div><br>
+       <div class="pai">
+            <div>
+                <label for="masculino">Masculino</label>
+                <input type="radio" name="masculino" id="sexMasc">
+            </div>
+            <div>
+                <label for="feminino">Feminino</label>
+                <input type="radio" name="feminino" id="sexFem">
+            </div>
+       </div><br>
+       <div>
+        <label for="altura">altura:</label>
+        <input type="text"  name="altura" id="altura">
+       </div><br>
+       
+            <input type="submit" value="Calcular peso ideal" id="calcular">
+            <input type="submit" value="limpar campos" id="clean"> 
+    </form>
+    <div>
+        <h1 class="resposta"></h1>
+    </div>
+</body>
+</html>
