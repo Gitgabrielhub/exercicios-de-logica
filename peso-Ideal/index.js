@@ -1,32 +1,36 @@
 let form = document.querySelector('form')
-let name = document.querySelector('#name')
-let Sexmasc = document.querySelector('#sexMasc')
-let SexFem = document.querySelector('#sexFem')
+let name = document.querySelector('#name').value
+let Sexmasc = document.querySelector('#sexMasc').value
+let SexFem = document.querySelector('#sexFem').value
 let altura = document.querySelector('#altura')
 let calcular = document.querySelector('#calcular')
 let clean = document.querySelector('#clean')
+let resposta = document.querySelector('.resposta')
 
 
-form.addEventListener("submit",(event)=>{
+calcular.addEventListener("click",(event)=>{
     event.preventDefault();
 
-    function verificarSexo(){
-        if(Sexmasc.value === 'on'){
-           let alturaNum =Number(altura.value);
-           parseFloat(alturaNum)
-           let quadradoNum = Math.pow(alturaNum, 2);
-           let calculoPeso = 22 * quadradoNum;
-
-           console.log(calculoPeso)
-        } if(SexFem === 'on'){
-            let alturaNumFem =Number(altura.value);
-            parseFloat(alturaNumFem);
-            let quadradoNumFem = Math.pow(alturaNumFem, 2);
-            let calculoPesoFem = 21 * quadradoNumFem
-            console.log(calculoPesoFem)
-        }
-    }
-    return verificarSexo()
-
+    let alturaNumber = Number(Math.pow(altura.value, 2))
+    alturaNumber.toFixed(2)
     
+
+   
+
+    if(SexFem === 'on' && Sexmasc === ''){
+        let calculoFem = 21 * alturaNumber;
+        resposta.innerText = `o peso ideal da ${name} é de: ${calculoFem}`;
+        resposta.style.color = 'red';
+    }else{
+        let calculoMasc = 22 * alturaNumber;
+        resposta.innerText = `o peso ideal do ${name} é de: ${calculoMasc}`;
+        resposta.style.color = 'green';
+    }
+}) 
+form.addEventListener('reset',()=>{
+    
+    resposta.innerHTML=''
 })
+
+
+
