@@ -8,14 +8,18 @@ let clean = document.querySelector('#clean')
 let resposta = document.querySelector('.resposta')
 
 
+
 calcular.addEventListener("click",(event)=>{
     event.preventDefault();
 
+    //verificar campos nao preenchidos 
+   
+    if((name === "" || Sexmasc === "") || altura === ''){
+        alert("preencha os campos")
+    }
+
     let alturaNumber = Number(Math.pow(altura.value, 2))
     alturaNumber.toFixed(2)
-    
-
-   
 
     if(SexFem === 'on' && Sexmasc === ''){
         let calculoFem = 21 * alturaNumber;
